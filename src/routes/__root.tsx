@@ -15,9 +15,9 @@ function RootComponent() {
         In this case, the container of Outlet comes last, 
         hence it's on the top
          */}
-      <div className="relative">
+      <main className="relative">
         <Outlet />
-      </div>
+      </main>
       <TanStackDevtools
         config={{
           position: 'bottom-right',

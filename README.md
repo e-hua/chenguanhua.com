@@ -14,3 +14,6 @@ Trigger CI check locally:
 
 Trigger CD deployment locally:
 `act push -j deploy --secret-file .env -r`
+
+If you want to keep the vitest UI opened:
+`npx vitest --watch`

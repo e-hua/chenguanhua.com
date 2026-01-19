@@ -19,7 +19,90 @@ code {
     source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+/* 
+Create a CSS pseudo-class for the custom-value dark
+
+Enable us to manually set what to show,
+when under dark mode by writing classname like this:
+
+color-a dark:color-b
+
+(data-theme="light" -> color-a)
+(data-theme="dark" -> color-b)
+*/
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 @theme {
   --font-mono: 'JetBrains Mono', monospace;
   --font-sans: 'Space Grotesk', sans-serif;
+
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+
+  --color-surface-1: var(--content-1);
+  --color-surface-hover: var(--content-1-hover);
+
+  --color-border-subtle: var(--border-color-1);
+}
+
+[data-theme='light'] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6; /* Light Gray for sections */
+
+  --content-1: #0000000d;
+  --content-1-hover: #00000014;
+
+  --text-primary: #111827; /* Gray-900 */
+  --text-secondary: #4b5563; /* Gray-600 */
+  --text-tertiary: #9ca3af;
+
+  --accent-primary: #06b6d4; /* Cyan-500 */
+  --accent-secondary: #0891b2; /* Cyan-600 */
+
+  --border-color-1: #e5e7eb; /* Light Gray Border */
+  --grid-color: #0000000d; /* Faint grid lines */
+}
+
+[data-theme='dark'] {
+  --bg-primary: #010101;
+  --bg-secondary: #0d1117;
+
+  /* Surface: 5% White (Glass effect on black) */
+  --content-1: #ffffff0d;
+  --content-1-hover: #ffffff14;
+
+  /* Text: White and soft grays */
+  --text-primary: #ffffff;
+  --text-secondary: #8b949e;
+  --text-tertiary: #484f58;
+
+  /* Accent: Neon Cyan */
+  --accent-primary: #00d9ff;
+  --accent-secondary: #00b8d4;
+
+  /* Borders */
+  --border-color-1: #ffffff14;
+  --grid-color: #ffffff0d;
+}
+
+/* 
+Simple CSS reset 
+https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
 }

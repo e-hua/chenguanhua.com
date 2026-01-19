@@ -45,8 +45,7 @@ color-a dark:color-b
   --color-accent-primary: var(--accent-primary);
   --color-accent-secondary: var(--accent-secondary);
 
-  --color-surface-1: var(--content-1);
-  --color-surface-hover: var(--content-1-hover);
+  --color-surface: var(--content);
 
   --color-border-subtle: var(--border-color-1);
 }
@@ -55,8 +54,7 @@ color-a dark:color-b
   --bg-primary: #ffffff;
   --bg-secondary: #f3f4f6; /* Light Gray for sections */
 
-  --content-1: #0000000d;
-  --content-1-hover: #00000014;
+  --content: #0000000d;
 
   --text-primary: #111827; /* Gray-900 */
   --text-secondary: #4b5563; /* Gray-600 */
@@ -73,13 +71,14 @@ color-a dark:color-b
   --bg-primary: #010101;
   --bg-secondary: #0d1117;
 
-  /* Surface: 5% White (Glass effect on black) */
-  --content-1: #ffffff0d;
-  --content-1-hover: #ffffff14;
+  /* Surface: 20% White (Glass effect on black) */
+  --content: rgb(from var(--color-white) r g b / 0.2);
 
   /* Text: White and soft grays */
   --text-primary: #ffffff;
-  --text-secondary: #8b949e;
+  /* Text-secondary: 60% White */
+  --text-secondary: rgb(from var(--color-white) r g b / 0.6);
+
   --text-tertiary: #484f58;
 
   /* Accent: Neon Cyan */
@@ -105,4 +104,14 @@ https://www.joshwcomeau.com/css/custom-css-reset/
 /* 2. Remove default margin */
 *:not(dialog) {
   margin: 0;
+}
+
+/* 3. Treat them as blocks */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
 }

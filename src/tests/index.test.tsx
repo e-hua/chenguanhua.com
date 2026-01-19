@@ -8,8 +8,8 @@ beforeEach(() => {
 })
 
 describe('Homepage ', () => {
-  it('should be rendered correctly', async () => {
-    const textElement = page.getByText('Learn TanStack')
+  it('should rendered my name correctly', async () => {
+    const textElement = page.getByText('Chen Guanhua')
     await expect.element(textElement).toBeVisible()
   })
 })

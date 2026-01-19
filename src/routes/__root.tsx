@@ -2,12 +2,11 @@ import { Outlet, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
-export const Route = createRootRoute({
-  component: () => (
-    <>
-      <div className="min-h-screen w-full">
-        <div className="fixed inset-0 bg-bg-primary" />
-        {/*
+function RootComponent() {
+  return (
+    <div className="min-h-screen w-full">
+      <div className="fixed inset-0 bg-bg-primary" />
+      {/*
         Use a relative wrapper around the <Outlet/> component.
         Since they're both positioned elements, 
         the browser uses the "Painter's Algorithm" (DOM Order) 
@@ -16,21 +15,24 @@ export const Route = createRootRoute({
         In this case, the container of Outlet comes last, 
         hence it's on the top
          */}
-        <div className="relative">
-          <Outlet />
-        </div>
-        <TanStackDevtools
-          config={{
-            position: 'bottom-right',
-          }}
-          plugins={[
-            {
-              name: 'Tanstack Router',
-              render: <TanStackRouterDevtoolsPanel />,
-            },
-          ]}
-        />
+      <div className="relative">
+        <Outlet />
       </div>
-    </>
-  ),
+      <TanStackDevtools
+        config={{
+          position: 'bottom-right',
+        }}
+        plugins={[
+          {
+            name: 'Tanstack Router',
+            render: <TanStackRouterDevtoolsPanel />,
+          },
+        ]}
+      />
+    </div>
+  )
+}
+
+export const Route = createRootRoute({
+  component: RootComponent,
 })

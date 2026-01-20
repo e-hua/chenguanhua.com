@@ -4,12 +4,25 @@ function HeroSection() {
   return (
     <Section id="hero" title="About me">
       <div className="flex flex-col md:flex-row items-center md:justify-center gap-10">
-        <a href="https://github.com/e-hua">
+        <a
+          href="https://github.com/e-hua"
+          target="_blank"
+          className="
+          relative rounded-2xl overflow-hidden 
+          grayscale hover:grayscale-0 
+          hover:scale-102
+          transition-all duration-300
+          "
+        >
           <img
             src="https://github.com/e-hua.png"
             alt="My GitHub profile picture"
-            className="w-75 h-75 md:w-120 md:h-120"
+            className="
+            w-75 h-75 md:w-120 md:h-120
+            opacity-90
+            transition-all"
           />
+          <div className="absolute inset-0 bg-surface backdrop-blur-[0.5px]" />
         </a>
 
         <div className="font-mono flex flex-col gap-8 text-left items-center">

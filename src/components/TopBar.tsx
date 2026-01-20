@@ -64,6 +64,7 @@ function TopBar({ visibleSectionIds }: { visibleSectionIds: Array<string> }) {
       flex flex-row 
       w-fit 
       bg-surface backdrop-blur-xs 
+      backdrop-brightness-90
       rounded-full overflow-hidden 
       p-1 gap-2"
       >

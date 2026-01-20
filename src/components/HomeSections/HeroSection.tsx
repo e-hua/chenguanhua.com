@@ -12,13 +12,14 @@ function HeroSection() {
           grayscale hover:grayscale-0 
           hover:scale-102
           transition-all duration-300
+          w-75 h-75 md:w-60 md:h-60 lg:w-120 lg:h-120
           "
         >
           <img
             src="https://github.com/e-hua.png"
             alt="My GitHub profile picture"
             className="
-            w-75 h-75 md:w-120 md:h-120
+            w-full h-full
             opacity-90
             transition-all"
           />

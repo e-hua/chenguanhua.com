@@ -1,9 +1,9 @@
 import type { TopBarSection } from '@/components/HomeSections/TopBarSection.type'
 import useVisibleSectionIds from '@/hooks/useVisibleSectionIds'
-import Section from '@/components/HomeSections/Section'
 import TopBar from '@/components/TopBar'
 import HeroSection from '@/components/HomeSections/HeroSection'
 import TechStackSection from '@/components/HomeSections/TechStackSection'
+import LinksSection from '@/components/HomeSections/LinksSection'
 
 const TOPBAR_CONTENT_DATA: Array<TopBarSection> = [
   { id: 'hero', title: 'About me', isRoot: true },
@@ -19,7 +19,7 @@ function App() {
       <div className="pt-20 relative flex flex-col gap-20">
         <HeroSection />
         <TechStackSection />
-        <Section id="links" title="Links"></Section>
+        <LinksSection />
       </div>
       {/*
      Let the topbar show up last in the DOM 

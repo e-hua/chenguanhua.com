@@ -43,13 +43,13 @@ function HeroSection() {
           <div className="text-center">
             <h2 className="text-text-primary">NUS CS Y2 undergraudate</h2>
 
-            <h2 className="text-text-secondary">
+            <span className="text-text-secondary">
               also a [
               <h2 className="text-text-primary inline">
                 Fullstack Developer, Cloud Enthusiast
               </h2>
               ]
-            </h2>
+            </span>
           </div>
 
           <p className="text-text-secondary text-sm">

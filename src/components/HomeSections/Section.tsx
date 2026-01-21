@@ -11,7 +11,7 @@ function Section({ id, title, children }: SectionProps) {
       className="
       scroll-mt-12 text-text-primary text-left 
       flex flex-col 
-      gap-5 "
+      gap-5 p-5"
     >
       <h1 className="font-sans font-semibold text-2xl md:text-3xl">{title}</h1>
       {children}

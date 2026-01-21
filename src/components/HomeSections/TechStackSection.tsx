@@ -129,11 +129,13 @@ function TechStackTile({ name, icon: Icon, pureText }: TechIcon) {
       <h3
         className="
       bg-bg-primary 
-      rounded-xs
       absolute top-0 left-1/2
       hidden group-hover:block 
       text-md text-text-secondary text-xs
-      -translate-y-full -translate-x-1/2"
+      -translate-y-full -translate-x-1/2
+      p-2 rounded-xl 
+      border border-border-subtle
+      "
       >
         {name}
       </h3>

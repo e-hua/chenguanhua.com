@@ -61,7 +61,7 @@ color-a dark:color-b
   --text-tertiary: #9ca3af;
 
   --accent-primary: #06b6d4; /* Cyan-500 */
-  --accent-secondary: #0891b2; /* Cyan-600 */
+  --accent-secondary: rgb(167, 139, 250);
 
   --border-color-1: #e5e7eb; /* Light Gray Border */
   --grid-color: #0000000d; /* Faint grid lines */
@@ -83,7 +83,7 @@ color-a dark:color-b
 
   /* Accent: Neon Cyan */
   --accent-primary: #00d9ff;
-  --accent-secondary: #00b8d4;
+  --accent-secondary: rgb(167, 139, 250);
 
   /* Borders */
   --border-color-1: #ffffff14;

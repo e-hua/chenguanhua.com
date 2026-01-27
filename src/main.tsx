@@ -17,6 +17,9 @@ const router = createRouter({
   scrollRestoration: true,
   defaultStructuralSharing: true,
   defaultPreloadStaleTime: 0,
+
+  // Enable smooth scrolling for hash in routes
+  defaultHashScrollIntoView: { behavior: 'smooth' },
 })
 
 // Register the router instance for type safety

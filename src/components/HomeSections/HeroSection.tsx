@@ -16,8 +16,8 @@ function HeroSection() {
           "
         >
           <img
-            src="https://github.com/e-hua.png"
-            alt="My GitHub profile picture"
+            src="/e-hua.png"
+            alt="Chen Guanhua's GitHub profile picture"
             className="
             w-full h-full
             opacity-90

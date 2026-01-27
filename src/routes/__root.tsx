@@ -1,10 +1,13 @@
-import { Outlet, createRootRoute } from '@tanstack/react-router'
+import { HeadContent, Outlet, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
 function RootComponent() {
   return (
     <div className="min-h-screen w-full">
+      <header>
+        <HeadContent />
+      </header>
       <div className="fixed inset-0 bg-bg-primary" />
       {/*
         Use a relative wrapper around the <Outlet/> component.

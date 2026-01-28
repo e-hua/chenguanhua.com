@@ -1,7 +1,5 @@
-import { Moon, Sun } from 'lucide-react'
 import { Link } from '@tanstack/react-router'
 import type { ClassValue } from 'clsx'
-import { useTheme, useThemeSetter } from '@/hooks/useTheme'
 import { cn } from '@/lib/utils/cn'
 import { TOPBAR_CONTENT_DATA } from '@/App'
 
@@ -54,9 +52,6 @@ Inspired by the Toc component by TanStack.com
 https://github.com/TanStack/tanstack.com/blob/main/src/components/Toc.tsx
 */
 function TopBar({ visibleSectionIds }: { visibleSectionIds: Array<string> }) {
-  const theme = useTheme()
-  const setTheme = useThemeSetter()
-
   return (
     <header className="flex flex-row justify-end text-text-secondary">
       <nav
@@ -72,7 +67,7 @@ function TopBar({ visibleSectionIds }: { visibleSectionIds: Array<string> }) {
           return (
             <TopBarButton
               key={idx}
-              border
+              border={idx !== TOPBAR_CONTENT_DATA.length - 1}
               hashId={section.id}
               active={visibleSectionIds.includes(section.id)}
             >
@@ -80,15 +75,6 @@ function TopBar({ visibleSectionIds }: { visibleSectionIds: Array<string> }) {
             </TopBarButton>
           )
         })}
-
-        <TopBarButton
-          className="p-2 hover:scale-105"
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-        >
-          <span>
-            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-          </span>
-        </TopBarButton>
       </nav>
     </header>
   )

@@ -4,29 +4,31 @@ function HeroSection() {
   return (
     <Section id="hero" title="About me">
       <div className="flex flex-col md:flex-row items-center md:justify-center gap-10">
-        <a
-          href="https://github.com/e-hua"
-          target="_blank"
-          className="
+        <div className="flex-1 flex flex-col items-center">
+          <a
+            href="https://github.com/e-hua"
+            target="_blank"
+            className="
           relative rounded-2xl overflow-hidden 
           grayscale hover:grayscale-0 
           hover:scale-102
           transition-all duration-300
-          w-75 h-75 md:w-60 md:h-60 lg:w-120 lg:h-120
-          "
-        >
-          <img
-            src="/e-hua.png"
-            alt="Chen Guanhua's GitHub profile picture"
-            className="
+          w-60 h-60 md:w-60 md:h-60 lg:w-120 lg:h-120
+          block"
+          >
+            <img
+              src="/e-hua.png"
+              alt="Chen Guanhua's GitHub profile picture"
+              className="
             w-full h-full
             opacity-90
             transition-all"
-          />
-          <div className="absolute inset-0 bg-surface backdrop-blur-[0.5px]" />
-        </a>
+            />
+            <div className="absolute inset-0 bg-surface backdrop-blur-[0.5px]" />
+          </a>
+        </div>
 
-        <div className="font-mono flex flex-col gap-8 text-left items-center">
+        <div className="font-mono flex flex-col gap-8 text-left items-center flex-1">
           <div className="w-full">
             <span className="text-accent-primary inline">
               user@cgh:
@@ -43,7 +45,7 @@ function HeroSection() {
           <div className="text-center">
             <h2 className="text-text-primary">NUS CS Y2 undergraudate</h2>
 
-            <span className="text-text-secondary">
+            <span className="text-text-secondary text-wrap">
               also a [
               <h2 className="text-text-primary inline">
                 Fullstack Developer, Cloud Enthusiast

@@ -1,6 +1,7 @@
 import { HeadContent, Outlet, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
+import SideBar from '@/components/SideBar'
 
 function RootComponent() {
   return (
@@ -18,8 +19,11 @@ function RootComponent() {
         In this case, the container of Outlet comes last, 
         hence it's on the top
          */}
-      <main className="relative">
-        <Outlet />
+      <main className="relative grid grid-cols-[auto_1fr]">
+        <SideBar />
+        <div className="h-screen overflow-y-scroll">
+          <Outlet />
+        </div>
       </main>
       <TanStackDevtools
         config={{

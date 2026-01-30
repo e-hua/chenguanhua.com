@@ -6,7 +6,7 @@ type SectionProps = {
 
 function Section({ id, title, children }: SectionProps) {
   return (
-    <div
+    <section
       id={id}
       className="
       scroll-mt-12 text-text-primary text-left 
@@ -15,8 +15,9 @@ function Section({ id, title, children }: SectionProps) {
     >
       <h1 className="font-sans font-semibold text-2xl md:text-3xl">{title}</h1>
       {children}
-    </div>
+    </section>
   )
 }
 
 export default Section
+export type { SectionProps }

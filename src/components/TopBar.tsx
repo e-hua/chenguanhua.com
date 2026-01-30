@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router'
 import type { ClassValue } from 'clsx'
+import type { TopBarSection } from '@/components/HomeSections/TopBarSection.type'
 import { cn } from '@/lib/utils/cn'
-import { TOPBAR_CONTENT_DATA } from '@/App'
 
 function TopBarButton({
   children,
@@ -10,6 +10,7 @@ function TopBarButton({
   onClick,
   hashId,
   active,
+  route,
 }: {
   children: React.ReactNode
   className?: ClassValue
@@ -17,6 +18,7 @@ function TopBarButton({
   onClick?: () => void
   hashId?: string
   active?: boolean
+  route?: string
 }) {
   const isLink = !!hashId
   const newClassName = cn(
@@ -35,7 +37,7 @@ function TopBarButton({
   return (
     <div className="flex flex-row items-center gap-2" onClick={onClick}>
       {isLink ? (
-        <Link className={newClassName} to={'/'} hash={hashId}>
+        <Link className={newClassName} to={route ?? '/'} hash={hashId}>
           {children}
         </Link>
       ) : (
@@ -51,7 +53,13 @@ function TopBarButton({
 Inspired by the Toc component by TanStack.com 
 https://github.com/TanStack/tanstack.com/blob/main/src/components/Toc.tsx
 */
-function TopBar({ visibleSectionIds }: { visibleSectionIds: Array<string> }) {
+function TopBar({
+  visibleSectionIds,
+  contentData,
+}: {
+  visibleSectionIds: Array<string>
+  contentData: Array<TopBarSection>
+}) {
   return (
     <header className="flex flex-row justify-end text-text-secondary">
       <nav
@@ -63,12 +71,13 @@ function TopBar({ visibleSectionIds }: { visibleSectionIds: Array<string> }) {
       rounded-full overflow-hidden 
       p-1 gap-2"
       >
-        {TOPBAR_CONTENT_DATA.map((section, idx) => {
+        {contentData.map((section, idx) => {
           return (
             <TopBarButton
               key={idx}
-              border={idx !== TOPBAR_CONTENT_DATA.length - 1}
+              border={idx !== contentData.length - 1}
               hashId={section.id}
+              route={section.route}
               active={visibleSectionIds.includes(section.id)}
             >
               {section.title}

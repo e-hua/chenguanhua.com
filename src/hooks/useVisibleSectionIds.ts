@@ -40,7 +40,7 @@ function useVisibleSectionIds(sections: Array<TopBarSection>) {
 
     const observer = new IntersectionObserver(callback, {
       rootMargin: '0px',
-      threshold: 0.2,
+      threshold: 0,
     })
 
     sections.map((section) => {

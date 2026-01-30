@@ -5,7 +5,7 @@ import SideBar from '@/components/SideBar'
 
 function RootComponent() {
   return (
-    <div className="min-h-screen w-full">
+    <div className="w-full">
       <header>
         <HeadContent />
       </header>
@@ -19,9 +19,11 @@ function RootComponent() {
         In this case, the container of Outlet comes last, 
         hence it's on the top
          */}
-      <main className="relative grid grid-cols-[auto_1fr]">
-        <SideBar />
-        <div className="h-screen overflow-y-scroll">
+      <main className="grid grid-cols-[auto_1fr]">
+        <aside className="sticky top-0 h-dvh">
+          <SideBar />
+        </aside>
+        <div className="relative">
           <Outlet />
         </div>
       </main>

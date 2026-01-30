@@ -28,7 +28,7 @@ function SideBar() {
     <div
       className="
     w-30 h-full 
-    border border-sidebar-border 
+    border-r border-sidebar-border 
     flex flex-col 
     justify-between
     items-center

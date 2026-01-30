@@ -31,7 +31,7 @@ type TechIcon = {
     props: SVGProps<SVGSVGElement>,
     fill?: string | undefined,
   ) => JSX.Element
-  hexColor: string
+  hexColor?: string
   pureText?: boolean
 }
 
@@ -101,29 +101,40 @@ const TECH_STACK_GROUPS: Array<TechStackGroup> = [
   },
 ]
 
-function TechStackTile({ name, icon: Icon, pureText }: TechIcon) {
+function TechStackTile({
+  name,
+  icon: Icon,
+  pureText,
+  containerClassName,
+  iconClassName,
+}: TechIcon & { containerClassName?: ClassValue; iconClassName?: ClassValue }) {
   const theme = useTheme()
   return (
     <div
-      className="
-    relative w-fit 
-    rounded-xl 
-    opacity-70 hover:opacity-100 hover:scale-105
-    transition-all duration-300 
-    group"
+      className={cn(
+        'relative w-fit rounded-xl',
+        'opacity-70 hover:opacity-100 hover:scale-105',
+        'transition-all duration-300',
+        'group',
+        containerClassName,
+      )}
     >
       {pureText ? (
         <Icon
-          className="
-          w-15 h-15 md:w-20 md:h-20 text-text-primary  
-          rounded-xl overflow-hidden "
+          className={cn(
+            'w-15 h-15 md:w-20 md:h-20 text-text-primary',
+            'rounded-xl overflow-hidden',
+            iconClassName,
+          )}
           fill={theme === 'light' ? '#000000' : '#ffffff'}
         />
       ) : (
         <Icon
-          className="
-        w-15 h-15 md:w-20 md:h-20 text-text-primary
-        rounded-xl overflow-hidden"
+          className={cn(
+            'w-15 h-15 md:w-20 md:h-20 text-text-primary',
+            'rounded-xl overflow-hidden',
+            iconClassName,
+          )}
         />
       )}
       <h3
@@ -183,3 +194,5 @@ function TechStackSection() {
 }
 
 export default TechStackSection
+export { TechStackTile }
+export type { TechIcon, TechStackGroup }

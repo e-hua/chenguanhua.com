@@ -26,7 +26,10 @@ function App() {
      So it gets to be at the top of the stacking context
      */}
       <div className="fixed top-5 right-5">
-        <TopBar visibleSectionIds={visibleSectionIds} />
+        <TopBar
+          visibleSectionIds={visibleSectionIds}
+          contentData={TOPBAR_CONTENT_DATA}
+        />
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 import { HeadContent, Outlet, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
-import SideBar from '@/components/SideBar'
+import Sidebar from '@/components/Sidebars/Sidebar'
 
 function RootComponent() {
   return (
@@ -21,7 +21,7 @@ function RootComponent() {
          */}
       <main className="grid grid-cols-[auto_1fr]">
         <aside className="sticky top-0 h-dvh">
-          <SideBar />
+          <Sidebar />
         </aside>
         <div className="relative">
           <Outlet />

@@ -8,6 +8,7 @@ import { routeTree } from './routeTree.gen'
 import './styles.css'
 import reportWebVitals from './reportWebVitals.ts'
 import { ThemeProvider } from './hooks/useTheme.tsx'
+import { SidebarProvider } from './hooks/useSidebarIsOpen.tsx'
 
 // Create a new router instance
 const router = createRouter({
@@ -35,9 +36,11 @@ if (rootElement && !rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement)
   root.render(
     <StrictMode>
-      <ThemeProvider>
-        <RouterProvider router={router} />
-      </ThemeProvider>
+      <SidebarProvider>
+        <ThemeProvider>
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </SidebarProvider>
     </StrictMode>,
   )
 }
